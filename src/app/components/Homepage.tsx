@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { ArrowRight, Code, Sparkles, Cpu } from "lucide-react";
-import heroImage from "../../assets/HomePageExE.gif";
+import heroImage from "../../assets/HomeExEV2.mp4";
 import { useTheme } from "../context/ThemeContext";
 
 export function Homepage() {
@@ -12,11 +12,10 @@ export function Homepage() {
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Hero Background Image */}
         <div className="absolute inset-0 z-0">
-          <img
-            src={heroImage}
-            alt="Cyberpunk car with neon lights"
-            className="w-full h-full object-cover opacity-40"
-          />
+          <video autoPlay loop muted playsInline src={heroImage} style={{
+          width: '110%',
+          height: '110%',
+          objectFit: 'fill'}}></video>
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/50 to-black" />
         </div>
 

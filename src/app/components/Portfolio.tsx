@@ -4,9 +4,9 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useTheme } from "../context/ThemeContext";
 import neonDreamsImage from "../../assets/64e2adffb24eed4513b1088cc77e00fe10a8c3e8.png";
 import goodSoupImage from "../../assets/ef647e0ff9253b862bc2f8eeca9c8026b22b9fc1.png";
-import lexusGIF from "../../assets/AQNcgrvVpYvcoXlZLFzez9ci6TqaDtS7DOlbSQOPyrHS5-SAvQLR25_SmH1XijoRusPpKKAsmZw8fyRnDIeWDlOL.gif"
+import lexusGIF from "../../assets/AQNcgrvVpYvcoXlZLFzez9ci6TqaDtS7DOlbSQOPyrHS5-SAvQLR25_SmH1XijoRusPpKKAsmZw8fyRnDIeWDlOL.mp4"
 import flyerGraphic from "../../assets/531170789_17975852693868748_5890785563965789603_n.jpg"
-import sickEvent from "../../assets/AQMH3Lia4K4ydZDzNvu6ZGN_f7_YEuzRvVYSAlAsKKJTpU2twC7g8RmLYdFksaZb-iyXv7pl53Yv7ICeoilJebfWmPmjuAKbWIkddps.gif"
+import sickEvent from "../../assets/AQMH3Lia4K4ydZDzNvu6ZGN_f7_YEuzRvVYSAlAsKKJTpU2twC7g8RmLYdFksaZb-iyXv7pl53Yv7ICeoilJebfWmPmjuAKbWIkddps.mp4"
 
 export function Portfolio() {
   const { colors } = useTheme();
@@ -134,11 +134,16 @@ export function Portfolio() {
               >
                 {/* Image */}
                 <div className="relative h-64 overflow-hidden">
+                  {
+                    (project.id === 5 || project.id === 3) ? 
+                    <video autoPlay loop muted playsInline src={project.image} style={{
+                              objectFit: 'fill'}}></video> :
                   <ImageWithFallback
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
+                  }   
                   
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
