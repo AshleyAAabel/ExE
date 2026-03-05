@@ -8,7 +8,7 @@ import { NotFound } from "./components/NotFound";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/ExE",
     Component: Root,
     children: [
       { index: true, Component: Homepage },
