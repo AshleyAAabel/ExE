@@ -8,7 +8,7 @@ import { NotFound } from "./components/NotFound";
 
 export const router = createBrowserRouter([
   {
-    path: "/ExE",
+    path: "/",
     Component: Root,
     children: [
       { index: true, Component: Homepage },
@@ -18,4 +18,4 @@ export const router = createBrowserRouter([
       { path: "*", Component: NotFound },
     ],
   },
-]);
+], {basename: "/ExE/"});
